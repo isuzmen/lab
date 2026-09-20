@@ -49,7 +49,6 @@ Sohbeti kaydırmadan bakmak için. Yeni komutlar öğrendikçe eklenir.
 
 ## Docker
 - `docker --version` ve `docker run hello-world`
-- build ve run komutları Adım 8'den sonra eklenecek
 
 ## Sorun çıkınca
 - WSL "Çok zararlı hata": bilgisayarı yeniden başlat, sonra `wsl --update`
@@ -71,6 +70,16 @@ SELECT, FROM, WHERE, GROUP BY, ORDER BY, LIMIT (sıra sabit, kullanmadığını 
 - Liste: `sayilar = [3, 8, 1]`, boş liste: `[]`, sona ekle: `liste.append(x)`
 - Döngü: `for x in liste:` (altındaki satırlar 4 boşluk girintili)
 - Koşul: `if x >= 50:` (içindeki satır 4 boşluk daha girintili)
+- Sözlük: `d = {"yer": "Hawaii"}`, okuma: `d["yer"]`, ekleme: `d["zaman"] = "..."`
+- Fonksiyon: `def isim(girdi):` ... `return sonuc`
+- Toplama kalıbı: `toplam = 0`, döngüde `toplam = toplam + x`
+- Süzme kalıbı: boş liste aç, döngüde `if` ile koşulu sağlayanı `append` et (SQL'deki WHERE gibi)
+
+## Python kalıpları
+- Liste: `sayilar = [3, 8, 1]`, boş liste: `[]`, sona ekle: `liste.append(x)`
+- Döngü: `for x in liste:` (altındaki satırlar 4 boşluk girintili)
+- Koşul: `if x >= 50:` (içindeki satır 4 boşluk daha girintili)
+- Girinti kuralı: `:` ile biten satırdan sonra gelen satır 4 boşluk daha içeriden başlar
 - Sözlük: `d = {"yer": "Hawaii"}`, okuma: `d["yer"]`, ekleme: `d["zaman"] = "..."`
 - Fonksiyon: `def isim(girdi):` ... `return sonuc`
 - Toplama kalıbı: `toplam = 0`, döngüde `toplam = toplam + x`
