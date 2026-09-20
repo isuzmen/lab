@@ -56,3 +56,10 @@ Sohbeti kaydırmadan bakmak için. Yeni komutlar öğrendikçe eklenir.
 - Şifre unutuldu: PowerShell'de `wsl -d Ubuntu -u root`, sonra `passwd kullaniciadin`, sonra `exit`
 - "Cannot connect to the Docker daemon": `sudo service docker start`
 - Anlamadığın hata: yazıyı olduğu gibi kopyala, tahmin etme
+
+## Docker (devamı)
+- `docker build -t isim .`: Dockerfile'dan paket (image) inşa eder
+- `docker run --rm -v "$(pwd)/veri:/veri" isim`: paketi çalıştırır (container), `veri` klasörünü içeri bağlar
+- `--rm`: bitince container'ı siler. `--user "$(id -u):$(id -g)"`: dosyaları senin adına oluşturur
+- Image paket/tarif, container onun çalışan hâli
+- Dockerfile: FROM (temel imaj), WORKDIR, COPY, RUN, CMD

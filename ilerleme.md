@@ -38,3 +38,7 @@ Kubernetes, Terraform, bulut sağlayıcısı, sertifika, PINN, yön değiştirme
 - Adım 8'den sonra: 5 kısa kalibrasyon görevi (terminal, Git, SQL, Python, Docker)
 - Paralel hat: Python temeli (Automate the Boring Stuff, ilk 5 bölüm)
 - Sonra: PostgreSQL, Docker Compose, ardından bulut aşaması
+
+## Güncelleme
+- Adım 8 bitti: Dockerfile ile deprem scripti container'da çalıştı, veri/deprem.db oluştu.
+- Sırada: 5 kısa kalibrasyon görevi (terminal, Git, SQL, Python, Docker). Yukarıdaki eski "Sırada" satırı geçersiz.
