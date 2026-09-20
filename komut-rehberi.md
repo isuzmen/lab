@@ -63,3 +63,6 @@ Sohbeti kaydırmadan bakmak için. Yeni komutlar öğrendikçe eklenir.
 - `--rm`: bitince container'ı siler. `--user "$(id -u):$(id -g)"`: dosyaları senin adına oluşturur
 - Image paket/tarif, container onun çalışan hâli
 - Dockerfile: FROM (temel imaj), WORKDIR, COPY, RUN, CMD
+
+## SQL yazılış sırası
+SELECT, FROM, WHERE, GROUP BY, ORDER BY, LIMIT (sıra sabit, kullanmadığını atla)

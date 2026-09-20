@@ -42,3 +42,9 @@ Kubernetes, Terraform, bulut sağlayıcısı, sertifika, PINN, yön değiştirme
 ## Güncelleme
 - Adım 8 bitti: Dockerfile ile deprem scripti container'da çalıştı, veri/deprem.db oluştu.
 - Sırada: 5 kısa kalibrasyon görevi (terminal, Git, SQL, Python, Docker). Yukarıdaki eski "Sırada" satırı geçersiz.
+
+## Kalibrasyon sonuçları
+- Terminal: bakarak yapar / yapar arası (grep, pipe, head kalıpları bakarak). Ana hatta devam.
+- Git: yapar. Temel döngü bakmadan çalışıyor.
+- SQL: bakarak yapar. Mantık var, yazılış sırası ve sözdizimi oturmadı (WHERE/ORDER BY karışıklığı tekrarladı). Mini alıştırma ve birkaç gün sonra tekrar.
+- Sırada: Python ve Docker kalibrasyonu.
