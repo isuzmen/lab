@@ -1,7 +1,9 @@
 # İlerleme
 
+Yeni bir sohbette bu dosyayı, plan.md'yi ve tekrar.md'yi yapıştır.
+
 ## Hedef
-Bulut/DevOps, veri mühendisliği, ML/MLOps omurgası. İlk iş hedefi: junior bulut/DevOps ya da data engineer. Uzay ve fizik verisi, ileride mercek olarak.
+Bulut/DevOps, veri mühendisliği, ML/MLOps omurgası. İlk iş hedefi: junior bulut/DevOps ya da data engineer. Uzay ve fizik verisi ileride mercek.
 
 ## Ortam
 Windows + WSL (Ubuntu), Git, GitHub CLI, SQLite, Python (venv), Docker (Linux içinde).
@@ -9,44 +11,29 @@ Windows + WSL (Ubuntu), Git, GitHub CLI, SQLite, Python (venv), Docker (Linux i�
 ## Biten adımlar
 1. GitHub reposu (lab)
 2. WSL ile Linux kurulumu
-3. Git ve GitHub bağlantısı, ilk commit
-4. Komut satırıyla deprem verisi (curl, head, wc, grep)
-5. SQL: SQLite ile sorgular (SELECT, WHERE, ORDER BY, GROUP BY, LIMIT, CAST)
-6. Python scripti: veriyi indirip veritabanına yazan indir_ve_yaz.py (tekrar çalıştırılabilir)
-7. Docker kurulumu, hello-world testi
+3. Git ve GitHub bağlantısı
+4. Komut satırıyla deprem verisi
+5. SQL: SQLite ile sorgular
+6. indir_ve_yaz.py: veriyi indirip veritabanına yazar (tekrar çalıştırılabilir)
+7. Docker kurulumu
+8. Dockerfile: script container'da çalıştı, rebuild gerektiği deneyle görüldü
+9. en_buyuk.py, ozet.py (üç kalıp), .dockerignore
+
+## Kalibrasyon (20 Eylül 2026)
+- Terminal: yapar / bakarak yapar arası
+- Git: yapar (branch ve pull request henüz yok)
+- SQL: bakarak yapar, bölümlerin işi oturdu
+- Python: bakarak yazar, ozet.py'nin son iki bloğunu kendi yazdı
+- Docker: bakarak yapar
+
+## Gözlemler
+- Kavramı anlıyor, sözdizimi eksik (SQL ve Python'da aynı örüntü). İlaç tekrar.
+- Raporları dürüst, teşhis buna dayanıyor.
+- Uzun açıklamalar kafa karıştırıyor: 2-3 cümle, sadece sorulan satır.
+- Sıfırdan büyük dosya yazma erken geldi, küçük basamaklara bölmek gerekiyor.
 
 ## Sırada
-Adım 8: Dockerfile yazıp deprem scriptini container'da çalıştırmak (docker build, docker run).
-
-## Odak alanları
-- Terminal: rahat ilerliyor
-- SQL: temel sorguları yazıyor, WHERE ile ORDER BY ayrımı oturuyor
-- Python: kodu okuyup anlıyor, sıfırdan yazma pratiği henüz başlamadı
-- Docker ve Git ayrıntıları: henüz ölçülmedi
-- Kavramsal anlayış iyi, bağımsız yazma pratiği sıradaki hedef
-
-## Çalışma kuralları
-- Seviyeler: S1 tanırım, S2 kullanırım, S3 sıfırdan yazarım. Çoğu konu S2.
-- Kod yardımı kademeli azalıyor: oku ve çalıştır, değiştir, boşluk doldur, sıfırdan yaz.
-- Yeni araca ancak projenin şu anki adımı gerektiriyorsa temelden girilir.
-- Yorgun günde asgari doz: 20 dakika ya da tek commit.
-
-## Şimdilik yasak
-Kubernetes, Terraform, bulut sağlayıcısı, sertifika, PINN, yön değiştirmek.
-
-## Plan
-- Adım 8'den sonra: 5 kısa kalibrasyon görevi (terminal, Git, SQL, Python, Docker)
-- Paralel hat: Python temeli (Automate the Boring Stuff, ilk 5 bölüm)
-- Sonra: PostgreSQL, Docker Compose, ardından bulut aşaması
-
-## Güncelleme
-- Adım 8 bitti: Dockerfile ile deprem scripti container'da çalıştı, veri/deprem.db oluştu.
-- Sırada: 5 kısa kalibrasyon görevi (terminal, Git, SQL, Python, Docker). Yukarıdaki eski "Sırada" satırı geçersiz.
-
-## Kalibrasyon sonuçları
-- Terminal: bakarak yapar / yapar arası (grep, pipe, head kalıpları bakarak). Ana hatta devam.
-- Git: yapar. Temel döngü bakmadan çalışıyor.
-- SQL: bakarak yapar. Mantık var, yazılış sırası ve sözdizimi oturmadı (WHERE/ORDER BY karışıklığı tekrarladı). Mini alıştırma ve birkaç gün sonra tekrar.
-- Sırada: Python ve Docker kalibrasyonu.
-- Python kalibrasyonu: sıfırdan yazma "yapamam". Merdiven: oku, çalıştır, değiştir tamam (for döngüsü, toplam). Sırada if/append ve boşluk doldurma.
-- Python güncelleme: for, if, append kalıpları okundu ve değiştirildi, boşluk dolduruldu. Sözdizimi henüz bakarak. Sırada: py_yaz1.py sıfırdan (bakarak serbest), 2-3 gün sonra bakmadan tekrar.
+1. README yaz (yapım)
+2. 22 Eylül: tekrar günü, ozet.py boş dosyadan
+3. Compose + PostgreSQL, gizli bilgiler, branch ve pull request
+4. Aşama 1 kapısı (plan.md'deki kanıt görevleri), sonra roadmap.sh kontrolü
