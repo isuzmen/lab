@@ -33,7 +33,7 @@ Windows + WSL (Ubuntu), Git, GitHub CLI, SQLite, Python (venv), Docker (Linux i�
 - Sıfırdan büyük dosya yazma erken geldi, küçük basamaklara bölmek gerekiyor.
 
 ## Sırada
-1. README yaz (yapım)
+1. README yazıldı
 2. 22 Eylül: tekrar günü, ozet.py boş dosyadan
 3. Compose + PostgreSQL, gizli bilgiler, branch ve pull request
 4. Aşama 1 kapısı (plan.md'deki kanıt görevleri), sonra roadmap.sh kontrolü
