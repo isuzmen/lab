@@ -72,6 +72,7 @@ Sohbeti kaydırmadan bakmak için. Yeni komutlar öğrendikçe eklenir.
 - `-v ...`: senin `veri` klasörünü container'ın `/veri` klasörüne bağlar
 - Image paket/tarif, container onun çalışan hâli
 - Dockerfile: FROM (temel imaj), WORKDIR, COPY, RUN, CMD
+- `.dockerignore`: docker build sırasında gönderilmeyecek dosya ve klasörler
 - Kodu değiştirince `docker build` yeniden yapılmalı, yoksa container eski kodu çalıştırır
 - `docker build -t isim .` komutunun sonundaki nokta "bu klasör" demek, unutulmamalı
 
