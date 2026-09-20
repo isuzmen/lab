@@ -48,3 +48,4 @@ Kubernetes, Terraform, bulut sağlayıcısı, sertifika, PINN, yön değiştirme
 - Git: yapar. Temel döngü bakmadan çalışıyor.
 - SQL: bakarak yapar. Mantık var, yazılış sırası ve sözdizimi oturmadı (WHERE/ORDER BY karışıklığı tekrarladı). Mini alıştırma ve birkaç gün sonra tekrar.
 - Sırada: Python ve Docker kalibrasyonu.
+- Python kalibrasyonu: sıfırdan yazma "yapamam". Merdiven: oku, çalıştır, değiştir tamam (for döngüsü, toplam). Sırada if/append ve boşluk doldurma.
