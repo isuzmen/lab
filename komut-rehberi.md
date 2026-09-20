@@ -23,6 +23,8 @@ Sohbeti kaydırmadan bakmak için. Yeni komutlar öğrendikçe eklenir.
 - `echo "yazı" > dosya`: dosyayı sıfırdan yaz, `>>` sonuna ekler
 - `curl -o hedef adres`: internetten dosya indir
 - nano: Ctrl+O kaydet, Enter onay, Ctrl+X çık
+- `nano +68 dosya`: dosyayı 68. satırda açar
+- `grep -n "kelime" dosya`: satır numarasıyla arar
 
 ## Git ve GitHub
 - `git status`: hangi dosyalar değişti ya da takip edilmiyor
@@ -70,6 +72,8 @@ Sohbeti kaydırmadan bakmak için. Yeni komutlar öğrendikçe eklenir.
 - `-v ...`: senin `veri` klasörünü container'ın `/veri` klasörüne bağlar
 - Image paket/tarif, container onun çalışan hâli
 - Dockerfile: FROM (temel imaj), WORKDIR, COPY, RUN, CMD
+- Kodu değiştirince `docker build` yeniden yapılmalı, yoksa container eski kodu çalıştırır
+- `docker build -t isim .` komutunun sonundaki nokta "bu klasör" demek, unutulmamalı
 
 ## Sorun çıkınca
 - WSL "Çok zararlı hata": bilgisayarı yeniden başlat, sonra `wsl --update`
