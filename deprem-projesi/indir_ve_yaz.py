@@ -1,3 +1,4 @@
+
 import csv
 import io
 import sqlite3
@@ -65,7 +66,7 @@ def main():
     metin = indir(URL)
     satirlar = satirlara_cevir(metin)
     veritabanina_yaz(satirlar, DB_YOLU)
-    print(f"{len(satirlar)} satır işlendi")
+    print(f"Toplam {len(satirlar)} deprem kaydı işlendi")
 
 
 if __name__ == "__main__":
