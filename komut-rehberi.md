@@ -25,7 +25,8 @@ Sohbeti kaydırmadan bakmak için. Yeni komutlar öğrendikçe eklenir.
 - nano: Ctrl+O kaydet, Enter onay, Ctrl+X çık
 
 ## Git ve GitHub
-- `git add .`: değişiklikleri geçmişe eklemek üzere seç
+- `git status`: hangi dosyalar değişti ya da takip edilmiyor
+- `git add dosya` ya da `git add .`: değişiklikleri geçmişe eklemek üzere seç
 - `git commit -m "mesaj"`: o anın fotoğrafını çek ve isim ver
 - `git push`: GitHub'a gönder
 - `gh auth login`: GitHub'a giriş
@@ -33,54 +34,45 @@ Sohbeti kaydırmadan bakmak için. Yeni komutlar öğrendikçe eklenir.
 - `.gitignore`: Git'in yok sayacağı dosya ve klasörler
 
 ## SQL (sqlite3)
-- `sqlite3 deprem.db`: veritabanını aç. İçinde: `.tables`, `.mode csv`, `.import dosya tablo`, `.quit`
-- `SELECT sütunlar FROM tablo WHERE koşul ORDER BY sütun DESC LIMIT n;`
-- WHERE satırları eler, ORDER BY sıralar (karıştırma)
-- `GROUP BY sütun` ile `COUNT(*)`: gruplayıp say
-- `CAST(sütun AS REAL)`: metni sayıya çevir (CSV'den her şey metin gelir)
-- Tek satırda: `sqlite3 deprem.db "SELECT ...;"`
+- `sqlite3 veri/deprem.db`: veritabanını aç. İçinde: `.tables`, `.quit`
+- Tek satırda: `sqlite3 veri/deprem.db "SELECT ...;"`
+- Yazılış sırası (sabit, kullanmadığını atla): SELECT, FROM, WHERE, GROUP BY, ORDER BY, LIMIT
+- WHERE: hangi satırları istiyorum (koşul). Örnek: `WHERE yer LIKE '%Hawaii%' AND buyukluk > 3`
+- GROUP BY: hangi sütunla gruplayayım (sütun adı yazılır)
+- ORDER BY: neye göre sıralayayım. `DESC` sadece burada durur
+- `COUNT(*)`: sayar. Bir hesaptır, GROUP BY'a yazılmaz, SELECT ve ORDER BY'da kullanılır
+- `ROUND(sütun)`: en yakın tam sayıya yuvarlar
+- `CAST(sütun AS REAL)`: metni sayıya çevirir. Sadece ham CSV'den import edilen metin tablolarında gerekir, `depremler_temiz`'de gerekmez
+- SQL yanlış sorguya da hata vermeden cevap verir: sonucun mantıklı olup olmadığına bak (örnek kontrol: `SELECT MAX(buyukluk) FROM depremler_temiz;`)
 
 ## Python
+- `python3 dosya.py`: script çalıştır (basit dosyalar için ortam açmaya gerek yok)
 - `python3 -m venv .venv`: izole ortam oluştur
 - `pip install paket` ve `pip freeze > requirements.txt`: paket kur, listeyi kaydet
-- `python dosya.py`: script çalıştır
-- Fonksiyon: `def isim(girdi):` ile başlar, `return sonuc` ile sonucu verir. Girinti (4 boşluk) önemli
+- Hata mesajının son satırı genelde sorunu söyler, önce onu oku
+- Girinti kuralı: `:` ile biten satırdan sonra gelen satır 4 boşluk daha içeriden başlar
+- Liste: `sayilar = [3, 8, 1]`, boş liste: `[]`, sona ekle: `liste.append(x)`
+- Döngü: `for x in liste:`
+- Koşul: `if x >= 50:`
+- Sözlük: `d = {"yer": "Hawaii"}`, okuma: `d["yer"]`, ekleme: `d["zaman"] = "..."`
+- Fonksiyon: `def isim(girdi):` ... `return sonuc`
+- Toplama kalıbı: `toplam = 0`, döngüde `toplam = toplam + x`
+- Süzme kalıbı: boş liste aç, döngüde `if` ile koşulu sağlayanı `append` et (SQL'deki WHERE gibi)
 - Boş hücre: `float("")` hata verir, boşsa `None` kullan
 
 ## Docker
-- `docker --version` ve `docker run hello-world`
+- `docker --version`, `docker run hello-world`: kurulum testi
+- `docker images`: elindeki paketleri (image) listeler
+- `docker build -t deprem-projesi .`: Dockerfile'dan paketi inşa eder
+- `docker run --rm --user "$(id -u):$(id -g)" -v "$(pwd)/veri:/veri" deprem-projesi`: paketi çalıştırır
+- `--rm`: bitince container'ı siler
+- `--user ...`: dosyaları senin adına oluşturur
+- `-v ...`: senin `veri` klasörünü container'ın `/veri` klasörüne bağlar
+- Image paket/tarif, container onun çalışan hâli
+- Dockerfile: FROM (temel imaj), WORKDIR, COPY, RUN, CMD
 
 ## Sorun çıkınca
 - WSL "Çok zararlı hata": bilgisayarı yeniden başlat, sonra `wsl --update`
 - Şifre unutuldu: PowerShell'de `wsl -d Ubuntu -u root`, sonra `passwd kullaniciadin`, sonra `exit`
 - "Cannot connect to the Docker daemon": `sudo service docker start`
 - Anlamadığın hata: yazıyı olduğu gibi kopyala, tahmin etme
-
-## Docker (devamı)
-- `docker build -t isim .`: Dockerfile'dan paket (image) inşa eder
-- `docker run --rm -v "$(pwd)/veri:/veri" isim`: paketi çalıştırır (container), `veri` klasörünü içeri bağlar
-- `--rm`: bitince container'ı siler. `--user "$(id -u):$(id -g)"`: dosyaları senin adına oluşturur
-- Image paket/tarif, container onun çalışan hâli
-- Dockerfile: FROM (temel imaj), WORKDIR, COPY, RUN, CMD
-
-## SQL yazılış sırası
-SELECT, FROM, WHERE, GROUP BY, ORDER BY, LIMIT (sıra sabit, kullanmadığını atla)
-
-## Python kalıpları
-- Liste: `sayilar = [3, 8, 1]`, boş liste: `[]`, sona ekle: `liste.append(x)`
-- Döngü: `for x in liste:` (altındaki satırlar 4 boşluk girintili)
-- Koşul: `if x >= 50:` (içindeki satır 4 boşluk daha girintili)
-- Sözlük: `d = {"yer": "Hawaii"}`, okuma: `d["yer"]`, ekleme: `d["zaman"] = "..."`
-- Fonksiyon: `def isim(girdi):` ... `return sonuc`
-- Toplama kalıbı: `toplam = 0`, döngüde `toplam = toplam + x`
-- Süzme kalıbı: boş liste aç, döngüde `if` ile koşulu sağlayanı `append` et (SQL'deki WHERE gibi)
-
-## Python kalıpları
-- Liste: `sayilar = [3, 8, 1]`, boş liste: `[]`, sona ekle: `liste.append(x)`
-- Döngü: `for x in liste:` (altındaki satırlar 4 boşluk girintili)
-- Koşul: `if x >= 50:` (içindeki satır 4 boşluk daha girintili)
-- Girinti kuralı: `:` ile biten satırdan sonra gelen satır 4 boşluk daha içeriden başlar
-- Sözlük: `d = {"yer": "Hawaii"}`, okuma: `d["yer"]`, ekleme: `d["zaman"] = "..."`
-- Fonksiyon: `def isim(girdi):` ... `return sonuc`
-- Toplama kalıbı: `toplam = 0`, döngüde `toplam = toplam + x`
-- Süzme kalıbı: boş liste aç, döngüde `if` ile koşulu sağlayanı `append` et (SQL'deki WHERE gibi)
